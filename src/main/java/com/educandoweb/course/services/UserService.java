@@ -13,6 +13,8 @@ import com.educandoweb.course.repositories.UserRepository;
 import com.educandoweb.course.services.exceptions.DatabaseException;
 import com.educandoweb.course.services.exceptions.ResourceNotFoundException;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class UserService {
 	
@@ -45,9 +47,14 @@ public class UserService {
 	}
 	
 	public User update(Long id, User obj) {
-		User entity = userRepository.getReferenceById(id);//instancia o usuário sem ir no banco de dados ainda, deixando o objeto monitorado pelo jpa para eu trabalhar com ele e em seguida fazer alguma operação. É melhor que o getById;
+		try {
+		User entity = userRepository.getReferenceById(id);
 		updateData(entity,obj);
 		return userRepository.save(entity);
+		}
+		catch(EntityNotFoundException e) {
+			throw new ResourceNotFoundException(id);
+		}
 	}
 	
 	private void updateData(User entity, User obj) {
