@@ -31,7 +31,7 @@ The project in question was developed with the help of Professor Nélio Alves' O
 
 ### Built with
 
-- spring boot 3
+- Spring Boot 3
 - Apache Tomcat
 - Maven
 - H2 Database
