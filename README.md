@@ -1,6 +1,6 @@
 # Shopping web services with Spring Boot and JPA / Hibernate
 
-The project in question was developed with the help of Professor Nélio Alves' Object-Oriented Java course. The project aimed to create web services aimed at operations commonly associated with shopping mall transactions.
+The project in question was developed with the help of Professor Nélio Alves' Object-Oriented Java course. The project aimed to create a web service aimed at managing orders, customers and payments for establishments.
 ## Overview
 
 #### Activities:
